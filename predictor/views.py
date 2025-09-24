@@ -51,7 +51,7 @@ def home(request):
         # Sample image clicked
         elif request.POST.get('sample_file'):
             sample_file = request.POST.get('sample_file')
-            img_path = os.path.join(settings.BASE_DIR, 'predictor', 'static', sample_file)
+            img_path = os.path.join(settings.BASE_DIR, 'public', sample_file)
             result = predict_image(img_path)
 
     return render(request, 'home.html', {'result': result, 'sample_images': sample_images})
